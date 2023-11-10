@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-テスト完了しました
+actionsがクローズした時に走るか
