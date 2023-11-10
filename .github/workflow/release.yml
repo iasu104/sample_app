@@ -1,28 +1,15 @@
-name: Release Workflow
-
-on:
-  pull_request:
-    types:
-      - closed
-
+# ワークフロー名
+name: Sample workflow
+# トリガー
+on: push
+# ジョブ
 jobs:
-  generate-release-notes:
+  # 適当なジョブ名
+  sample_build:
+    # 実行環境
     runs-on: ubuntu-latest
+    # アクション
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Generate release notes
-      run: |
-        # Your release note generation script or command here
-        # For example, if you have a script called generate_release_notes.sh
-        chmod +x generate_release_notes.sh
-        ./generate_release_notes.sh
-
-    - name: Commit and push release notes
-      run: |
-        git config user.email "actions@github.com"
-        git config user.name "GitHub Actions"
-        git add -A
-        git commit -m "Generate release notes"
-        git push
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
