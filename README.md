@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-actionsがクローズした時に走るか
+actionsがクローズした時に走るかを確認する
