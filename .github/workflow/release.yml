@@ -1,20 +1,28 @@
-# .github/release.yml
+name: Release Workflow
 
-changelog:
-  exclude:
-    labels:
-      - ignore-for-release
-    authors:
-      - octocat
-  categories:
-    - title: Breaking Changes 🛠
-      labels:
-        - Semver-Major
-        - breaking-change
-    - title: Exciting New Features 🎉
-      labels:
-        - Semver-Minor
-        - enhancement
-    - title: Other Changes
-      labels:
-        - "*"
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  generate-release-notes:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Generate release notes
+      run: |
+        # Your release note generation script or command here
+        # For example, if you have a script called generate_release_notes.sh
+        chmod +x generate_release_notes.sh
+        ./generate_release_notes.sh
+
+    - name: Commit and push release notes
+      run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git add -A
+        git commit -m "Generate release notes"
+        git push
