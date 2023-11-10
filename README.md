@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-テスト
+テスト完了しました
