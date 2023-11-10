@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-リリースノート作成テスト
+リリースノート自動生成テスト
