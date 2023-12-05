@@ -30,7 +30,6 @@ jobs:
           RELEASE_TAG: ${{ github.event.pull_request.title }}
         uses: release-drafter/release-drafter@v5
         with:
-          comfig-file: .github/release.yml 
           tag: ${{ env.RELEASE_TAG }}
           name: Release ${{ env.RELEASE_TAG }}
           version: ${{ env.RELEASE_TAG }}
